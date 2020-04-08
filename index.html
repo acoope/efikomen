@@ -1,0 +1,172 @@
+<html>
+	<head>
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+		<!-- Bootstrap core CSS -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- JQuery -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+		<style>
+			.bg {
+			
+		 		width: 100%;
+		    	height: 100%;
+		    	position: fixed;
+		    	top: 0;
+		    	left: 0;
+		    	opacity: 0.4;
+ 	
+			}
+
+			h1, h2 {
+				color: black;
+				font-weight: bold;
+			}
+
+			.col-3 {
+				text-align: center;
+			}
+
+			.row {
+				margin-top: 50px;
+			}
+
+		</style>
+		
+	</head>
+	<body onload="addRandomMatzoh()">
+		<div>
+			<img class="bg" src="https://cdn.jewishboston.com/uploads/2017/04/iStock-478763207-729x486.jpg" />
+			<h1 style="text-align: center">E-fikomen</h1>
+			
+			<h2 style="text-align: center">Can you find the afikomen? Click on each icon to see if the afikomen is underneath it!</h2>
+		<div class="container">
+			<div>
+				<div class="row">
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-chair start"></i>				 
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						<i class="fas fa-bed start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						<i class="fas fa-couch start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			    		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						<i class="fas fa-baby-carriage start"></i>
+						</span>
+			    	</div>
+			  	</div>
+			  	<div class="row">
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						<i class="fas fa-coffee start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-igloo start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-umbrella start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			    		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-lightbulb start"></i>
+						</span>
+			    	</div>
+			  	</div>
+			  	<div class="row">
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						<i class="fas fa-basketball-ball start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-bicycle start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-book start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			    		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-car-side start"></i>
+						</span>
+			    	</div>
+			  	</div>
+			  	<div class="row">
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						<i class="fas fa-fire-extinguisher start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-fish start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			      		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-umbrella start"></i>
+						</span>
+			    	</div>
+			    	<div class="col-3">
+			    		<span class="iconClick" style="font-size: 5em; color: purple;">
+	 						 <i class="fas fa-lightbulb start"></i>
+						</span>
+			    	</div>
+			  	</div>
+			</div>
+		</div>
+		</div>
+
+
+		<script>
+
+			function addRandomMatzoh() {
+				matzohIcon = '<i class="fas fa-bread-slice revealed" style="display: none; color: green;"></i>'
+				notIcon = '<i class="far fa-times-circle revealed" style="display: none; color: red;"></i>'
+
+				ran = Math.floor(Math.random() * Math.floor(15));
+
+				count = 0
+				$( ".iconClick" ).each(function() {
+					if(count == ran) {
+						$( this ).append(matzohIcon);
+					} else {
+						$( this ).append(notIcon);
+					}
+				    count++;
+				});
+
+			}
+
+			$(".iconClick").click(function(){
+				$(this).find(".start").toggle();
+				$(this).find(".revealed").toggle();
+			});
+
+		</script>
+
+
+		
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</body>
+</html>
